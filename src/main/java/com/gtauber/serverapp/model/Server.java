@@ -3,7 +3,6 @@ package com.gtauber.serverapp.model;
 import com.gtauber.serverapp.enumeration.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
@@ -18,6 +17,7 @@ public class Server {
     @Id
     @GeneratedValue(generator = "UUID", strategy = GenerationType.AUTO)
     private UUID id;
+    private String name;
     @Column(unique = true)
     @NotEmpty(message = "IP Address is required")
     private String ipAddress;
@@ -25,4 +25,5 @@ public class Server {
     private String type;
     private String imageUrl;
     private Status status;
+
 }
